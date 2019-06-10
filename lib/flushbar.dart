@@ -109,8 +109,8 @@ class Flushbar<T extends Object> extends StatefulWidget {
   }
 
   FlushbarStatusCallback onStatusChanged;
-  final String title;
-  final String message;
+  String title;
+  String message;
   final Widget titleText;
   final Widget messageText;
   final Color backgroundColor;
@@ -122,7 +122,7 @@ class Flushbar<T extends Object> extends StatefulWidget {
   final FlatButton mainButton;
   final Function(Flushbar) onTap;
   final Duration duration;
-  final bool showProgressIndicator;
+  bool showProgressIndicator;
   final AnimationController progressIndicatorController;
   final Color progressIndicatorBackgroundColor;
   final Animation<Color> progressIndicatorValueColor;
@@ -505,6 +505,7 @@ class _FlushbarState<K extends Object> extends State<Flushbar> with TickerProvid
   }
 
   Widget _getTitleText() {
+    widget.title = _progressAnimation.value.floor() >= 1 ? 'Montage de votre CV vidéo en cours' : 'Envoi de vos vidéos au serveur';
     return widget.titleText != null
         ? widget.titleText
         : Text(
