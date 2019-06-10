@@ -347,7 +347,7 @@ class _FlushbarState<K extends Object> extends State<Flushbar> with TickerProvid
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          widget.showProgressIndicator
+          widget.showProgressIndicator && _progressAnimation.value.floor() < 1
               ? LinearProgressIndicator(
                   value: widget.progressIndicatorController != null ? _progressAnimation.value : null,
                   backgroundColor: widget.progressIndicatorBackgroundColor,
