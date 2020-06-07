@@ -236,7 +236,7 @@ class FlushbarRoute<T> extends OverlayRoute<T> {
     assert(_controller != null, '$runtimeType.createAnimationController() returned null.');
     _animation = createAnimation();
     assert(_animation != null, '$runtimeType.createAnimation() returned null.');
-    super.install(insertionPoint);
+    super.install();
   }
 
   @override
